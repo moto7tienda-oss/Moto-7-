@@ -1,0 +1,10 @@
+{
+  "name": "moto7-tienda",
+  "version": "1.0.0",
+  "description": "Tienda online MOTO 7",
+  "dependencies": {
+    "mercadopago": "^2.0.0",
+    "google-spreadsheet": "^4.1.1",
+    "google-auth-library": "^9.0.0"
+  }
+}
