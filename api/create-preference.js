@@ -64,8 +64,12 @@ module.exports = async (req, res) => {
     return res.status(200).json({ preference_id: result.id, init_point: result.init_point });
 
   } catch (err) {
-    console.error('Error create-preference:', err);
-    return res.status(500).json({ error: err.message || 'Error interno' });
+    console.error('Google Sheets error completo:', JSON.stringify({
+      message: err.message,
+      code: err.code,
+      status: err.status,
+      stack: err.stack?.split('\n')[0]
+    }));
   }
 };
 
