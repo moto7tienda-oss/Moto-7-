@@ -3,9 +3,7 @@ const { JWT } = require('google-auth-library');
 
 module.exports = async (req, res) => {
   try {
-    const auth = new JWT({
-      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      key:-----BEGIN PRIVATE KEY-----
+    const privateKey = `-----BEGIN PRIVATE KEY-----
 MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDiushBCIEBMe4R
 897fMKiwVOdaFgIa1SbhAm9Y7METyPGNT862MThIyM0eupctGNtUhzh6RMs7TDiv
 XaL02PWCCDEzwggDgIcK0048x7B6rorYFKHZadYx0VZn+F9vYr349OWRygQDoUop
@@ -32,7 +30,11 @@ s0SbUV3XvmkWcBxxI8Fy4nVF84LO5JGQIfnW82JlAoGBAKmiTts5R87D8QmUruZr
 Lx/myivzwLuIc0LKAlTw/wkxrofdSr0pVbATWXQQua4A29U23zVAunazIxaaH8Uv
 vKMRk9xmwU0PsLhDGLQnYYZeKWXnlcIw5dK80a1N25glDujUt1F6JHP9pW68h9Cs
 siKXlBmSjo/cHkUqB0r6DN8+
------END PRIVATE KEY-----,
+-----END PRIVATE KEY-----`;
+
+    const auth = new JWT({
+      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      key: privateKey,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
@@ -50,6 +52,10 @@ siKXlBmSjo/cHkUqB0r6DN8+
     return res.status(200).json({ ok: true, sheet: sheet.title });
 
   } catch (err) {
-    return res.status(500).json({ error: err.message, code: err.code });
+    return res.status(500).json({ 
+      error: err.message, 
+      code: err.code,
+      status: err.status 
+    });
   }
 };
