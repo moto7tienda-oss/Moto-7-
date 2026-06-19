@@ -46,7 +46,6 @@
       top: 0;
       z-index: 100;
     }
-
     .logo {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 32px;
@@ -54,10 +53,7 @@
       color: var(--text);
       line-height: 1;
     }
-    .logo span {
-      color: var(--red);
-    }
-
+    .logo span { color: var(--red); }
     #cart-toggle {
       display: flex;
       align-items: center;
@@ -73,7 +69,6 @@
       transition: border-color 0.15s, background 0.15s;
     }
     #cart-toggle:hover { border-color: var(--red); background: var(--bg4); }
-
     #cart-badge {
       background: var(--red);
       color: white;
@@ -116,10 +111,7 @@
       color: var(--text);
       margin-bottom: 14px;
     }
-    .hero h1 em {
-      color: var(--red);
-      font-style: normal;
-    }
+    .hero h1 em { color: var(--red); font-style: normal; }
     .hero p {
       font-size: 15px;
       color: var(--text2);
@@ -145,7 +137,23 @@
     }
     .strip-item { display: flex; align-items: center; gap: 6px; }
 
-    /* ── SECTION TITLE ── */
+    /* ── AVISO LEGAL ── */
+    .aviso-legal {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #1a1200;
+      border-top: 1px solid #5a3e00;
+      border-bottom: 1px solid #5a3e00;
+      padding: 12px 1.5rem;
+      font-size: 12px;
+      color: #ccaa55;
+      line-height: 1.5;
+    }
+    .aviso-legal span { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .aviso-legal strong { color: #ffcc66; }
+
+    /* ── SECTION HEADER ── */
     .section-header {
       padding: 2rem 1.5rem 1rem;
       display: flex;
@@ -176,7 +184,6 @@
       border-radius: var(--radius);
       overflow: hidden;
     }
-
     .product-card {
       background: var(--bg2);
       display: flex;
@@ -186,7 +193,6 @@
     }
     .product-card:hover { background: var(--bg3); }
     .product-card.no-stock { opacity: 0.45; pointer-events: none; }
-
     .card-img {
       aspect-ratio: 1;
       overflow: hidden;
@@ -199,13 +205,12 @@
       object-fit: cover;
       transition: transform 0.3s ease;
       display: block;
+      cursor: zoom-in;
     }
     .product-card:hover .card-img img { transform: scale(1.04); }
-
     .stock-badge {
       position: absolute;
-      top: 8px;
-      right: 8px;
+      top: 8px; right: 8px;
       background: rgba(0,0,0,0.75);
       color: var(--text2);
       font-size: 10px;
@@ -217,7 +222,6 @@
     }
     .stock-badge.low { color: #FF9800; border-color: #FF9800; }
     .stock-badge.out { color: #f44; border-color: #f44; }
-
     .card-body {
       padding: 14px;
       flex: 1;
@@ -225,57 +229,23 @@
       flex-direction: column;
       border-top: 1px solid var(--border);
     }
-
-    .card-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 4px;
-    }
-    .card-code {
-      font-size: 10px;
-      color: var(--text3);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .card-price {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 24px;
-      letter-spacing: 1px;
-      color: var(--red);
-      margin-top: auto;
-      margin-bottom: 10px;
-    }
-
-    .qty-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
+    .card-name { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.35; margin-bottom: 4px; }
+    .card-code { font-size: 10px; color: var(--text3); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+    .card-price { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 1px; color: var(--red); margin-top: auto; margin-bottom: 10px; }
+    .qty-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
     .qty-btn {
       width: 28px; height: 28px;
       border: 1px solid var(--border2);
       border-radius: 4px;
       background: var(--bg4);
       color: var(--text);
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 16px; font-weight: 600;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       transition: border-color 0.15s, background 0.15s;
     }
     .qty-btn:hover { border-color: var(--red); background: var(--bg3); }
-    .qty-val {
-      font-size: 15px;
-      font-weight: 600;
-      min-width: 20px;
-      text-align: center;
-      color: var(--text);
-    }
-
+    .qty-val { font-size: 15px; font-weight: 600; min-width: 20px; text-align: center; color: var(--text); }
     .add-btn {
       width: 100%;
       padding: 9px;
@@ -283,8 +253,7 @@
       color: white;
       border: none;
       border-radius: 4px;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 12px; font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       cursor: pointer;
@@ -293,6 +262,45 @@
     .add-btn:hover { background: var(--red-dark); }
     .add-btn:disabled { background: var(--bg4); color: var(--text3); cursor: not-allowed; }
     .add-btn.added { background: var(--green); color: #000; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 0 40px rgba(232,0,15,0.3);
+      animation: zoomIn 0.2s ease;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.85); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 20px; right: 24px;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+      z-index: 1001;
+    }
+    .lightbox-close:hover { opacity: 1; color: var(--red); }
 
     /* ── CART SIDEBAR ── */
     .cart-overlay {
@@ -303,7 +311,6 @@
       backdrop-filter: blur(2px);
     }
     .cart-overlay.open { display: block; }
-
     .cart-panel {
       position: fixed;
       top: 0; right: -100%;
@@ -317,7 +324,6 @@
       transition: right 0.3s ease;
     }
     .cart-panel.open { right: 0; }
-
     .cart-header {
       background: #000;
       border-bottom: 2px solid var(--red);
@@ -326,94 +332,29 @@
       align-items: center;
       justify-content: space-between;
     }
-    .cart-header h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 2px;
-      color: var(--text);
-    }
-    .cart-close {
-      background: none; border: none;
-      color: var(--text2); font-size: 20px;
-      cursor: pointer; padding: 4px;
-      transition: color 0.15s;
-    }
+    .cart-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--text); }
+    .cart-close { background: none; border: none; color: var(--text2); font-size: 20px; cursor: pointer; padding: 4px; transition: color 0.15s; }
     .cart-close:hover { color: var(--red); }
-
     .cart-body { flex: 1; overflow-y: auto; padding: 1rem 1.25rem; }
-
-    .cart-section-title {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text3);
-      margin-bottom: 10px;
-    }
-
-    .cart-item-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border);
-      gap: 8px;
-    }
+    .cart-section-title { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text3); margin-bottom: 10px; }
+    .cart-item-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); gap: 8px; }
     .cart-item-left { flex: 1; }
     .cart-item-name { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.3; }
     .cart-item-qty { font-size: 11px; color: var(--text3); margin-top: 2px; }
     .cart-item-price { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); white-space: nowrap; }
-    .remove-item {
-      background: none; border: none;
-      color: var(--text3); font-size: 14px;
-      cursor: pointer; padding: 4px;
-      transition: color 0.15s;
-    }
+    .remove-item { background: none; border: none; color: var(--text3); font-size: 14px; cursor: pointer; padding: 4px; transition: color 0.15s; }
     .remove-item:hover { color: var(--red); }
-
-    .cart-total-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: 14px 0 0;
-    }
+    .cart-total-row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0 0; }
     .cart-total-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text2); }
     .cart-total-amount { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--text); }
-
-    .cart-empty {
-      text-align: center;
-      color: var(--text3);
-      font-size: 14px;
-      padding: 2rem 0;
-    }
-
-    .cart-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 1.25rem 0;
-    }
+    .cart-empty { text-align: center; color: var(--text3); font-size: 14px; padding: 2rem 0; }
+    .cart-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
 
     /* ── FORM ── */
     .customer-form { margin-top: 0; }
     .form-group { margin-bottom: 10px; }
-    .form-group label {
-      display: block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text3);
-      margin-bottom: 5px;
-    }
-    .form-group input {
-      width: 100%;
-      padding: 9px 12px;
-      background: var(--bg3);
-      border: 1px solid var(--border2);
-      border-radius: 4px;
-      font-size: 14px;
-      color: var(--text);
-      transition: border-color 0.15s;
-      font-family: 'Inter', sans-serif;
-    }
+    .form-group label { display: block; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); margin-bottom: 5px; }
+    .form-group input { width: 100%; padding: 9px 12px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 4px; font-size: 14px; color: var(--text); transition: border-color 0.15s; font-family: 'Inter', sans-serif; }
     .form-group input::placeholder { color: var(--text3); }
     .form-group input:focus { outline: none; border-color: var(--red); }
     .form-group input.error { border-color: var(--red); }
@@ -421,70 +362,22 @@
     .field-error.show { display: block; }
 
     /* ── CART FOOTER ── */
-    .cart-footer {
-      padding: 1rem 1.25rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      background: #000;
-    }
-
-    .pay-btn {
-      width: 100%;
-      padding: 13px;
-      border: none;
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      transition: opacity 0.15s, filter 0.15s;
-    }
+    .cart-footer { padding: 1rem 1.25rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; background: #000; }
+    .pay-btn { width: 100%; padding: 13px; border: none; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: opacity 0.15s, filter 0.15s; }
     .pay-btn:hover { filter: brightness(1.1); }
     .pay-btn:disabled { opacity: 0.4; cursor: not-allowed; }
     .btn-mp { background: #009EE3; color: white; }
     .btn-wa { background: #25D366; color: white; }
-
     .pay-note { font-size: 10px; color: var(--text3); text-align: center; letter-spacing: 0.5px; }
 
     /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      background: #000;
-    }
-    .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 24px;
-      letter-spacing: 3px;
-      color: var(--text2);
-      margin-bottom: 8px;
-    }
+    footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; background: #000; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 3px; color: var(--text2); margin-bottom: 8px; }
     .footer-logo span { color: var(--red); }
     footer p { font-size: 12px; color: var(--text3); }
 
     /* ── TOAST ── */
-    .toast {
-      position: fixed;
-      bottom: 24px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--bg4);
-      border: 1px solid var(--border2);
-      color: var(--text);
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
-      z-index: 500;
-      white-space: nowrap;
-    }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--bg4); border: 1px solid var(--border2); color: var(--text); padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity 0.25s; z-index: 500; white-space: nowrap; }
     .toast.show { opacity: 1; }
 
     /* ── SCROLLBAR ── */
@@ -492,68 +385,13 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .products-grid { grid-template-columns: repeat(2, 1fr); margin: 0 0 2rem; border-radius: 0; border-left: none; border-right: none; }
       .hero { padding: 2rem 1rem; }
       .strip { gap: 1rem; font-size: 11px; }
       .section-header { padding: 1.5rem 1rem 0.75rem; }
     }
-    .aviso-legal {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      background: #1a1200;
-      border-top: 1px solid #5a3e00;
-      border-bottom: 1px solid #5a3e00;
-      padding: 12px 1.5rem;
-      font-size: 12px;
-      color: #ccaa55;
-      line-height: 1.5;
-    }
-    .aviso-legal span { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .aviso-legal strong { color: #ffcc66; }
-
-    @media (max-width: 600px) {
-  /* ── LIGHTBOX ── */
-.lightbox-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  cursor: zoom-out;
-  backdrop-filter: blur(4px);
-}
-.lightbox-overlay.open {
-  display: flex;
-}
-.lightbox-overlay img {
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-  border-radius: 6px;
-  box-shadow: 0 0 40px rgba(232,0,15,0.3);
-  animation: zoomIn 0.2s ease;
-}
-@keyframes zoomIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-.lightbox-close {
-  position: fixed;
-  top: 20px; right: 24px;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  line-height: 1;
-  opacity: 0.7;
-  transition: opacity 0.15s;
-}
-.lightbox-close:hover { opacity: 1; color: var(--red); }    
   </style>
 </head>
 <body>
@@ -590,9 +428,9 @@
 <div class="products-grid" id="products-grid"></div>
 
 <!-- Lightbox -->
-<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lb-close">✕</button>
+  <img id="lightbox-img" src="" alt="" />
 </div>
 
 <footer>
@@ -600,7 +438,7 @@
   <p>Accesorios para moto · Pagos seguros con MercadoPago</p>
 </footer>
 
-<!-- Overlay -->
+<!-- Overlay carrito -->
 <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
 
 <!-- Cart panel -->
@@ -609,7 +447,6 @@
     <h2>Tu pedido</h2>
     <button class="cart-close" onclick="toggleCart()">✕</button>
   </div>
-
   <div class="cart-body">
     <p class="cart-section-title">Resumen</p>
     <div id="cart-items-list"><p class="cart-empty">Todavía no agregaste productos.</p></div>
@@ -617,7 +454,6 @@
       <span class="cart-total-label">Total</span>
       <span class="cart-total-amount" id="cart-total-amount">$0</span>
     </div>
-
     <div id="customer-form" style="display:none">
       <hr class="cart-divider">
       <p class="cart-section-title">Tus datos</p>
@@ -645,14 +481,9 @@
       </div>
     </div>
   </div>
-
   <div class="cart-footer">
-    <button class="pay-btn btn-mp" id="btn-mp" onclick="pagarMP()">
-      💳 Pagar con MercadoPago
-    </button>
-    <button class="pay-btn btn-wa" id="btn-wa" onclick="pedirWA()">
-      📲 Consultar por WhatsApp
-    </button>
+    <button class="pay-btn btn-mp" id="btn-mp" onclick="pagarMP()">💳 Pagar con MercadoPago</button>
+    <button class="pay-btn btn-wa" id="btn-wa" onclick="pedirWA()">📲 Consultar por WhatsApp</button>
     <p class="pay-note">Pago 100% seguro · SSL encriptado</p>
   </div>
 </div>
@@ -676,7 +507,7 @@ const PRODUCTS = [
   { id: 'TRABANUMERIC', name: 'Traba U con Código Numérico',           price: 18000, stock: 1,  img: 'https://moto7tienda-oss.github.io/Moto-7-/TRABANUMERIC.jpg' },
   { id: 'MOTOPULPO',    name: 'Red Elástica Sujeta Carga',             price:  6000, stock: 2,  img: 'https://moto7tienda-oss.github.io/Moto-7-/MOTOPULPO.jpg' },
   { id: 'DADOS',        name: 'Caja 10 Dados 8mm–21mm',               price: 11000, stock: 1,  img: 'https://moto7tienda-oss.github.io/Moto-7-/DADOS-2.jpg' },
-  { id: 'ALLEN',        name: 'Set Llave Allen x8',                    price:  10000, stock: 2,  img: 'https://moto7tienda-oss.github.io/Moto-7-/ALLEN-3.jpg' },
+  { id: 'ALLEN',        name: 'Set Llave Allen x8',                    price: 10000, stock: 2,  img: 'https://moto7tienda-oss.github.io/Moto-7-/ALLEN-3.jpg' },
   { id: 'CADENAPEST',   name: 'Cadena Candado Pestillo 8mm 1,20m',     price: 17000, stock: 2,  img: 'https://moto7tienda-oss.github.io/Moto-7-/CADENAPEST.jpg' },
   { id: 'CUELLITO',     name: 'Cuello Polar con Hilo Ajustable',       price:  6000, stock: 2,  img: 'https://moto7tienda-oss.github.io/Moto-7-/CUELLITO.jpg' },
   { id: 'FUNDAMOTO',    name: 'Funda para Moto Impermeable',           price: 12000, stock: 2,  img: 'https://moto7tienda-oss.github.io/Moto-7-/FUNDAMOTO.webp' },
@@ -695,21 +526,17 @@ function renderProducts() {
   const inStock  = PRODUCTS.filter(p => p.stock > 0);
   const outStock = PRODUCTS.filter(p => p.stock === 0);
   const all = [...inStock, ...outStock];
-
-  document.getElementById('product-count').textContent =
-    inStock.length + ' productos disponibles';
-
+  document.getElementById('product-count').textContent = inStock.length + ' productos disponibles';
   document.getElementById('products-grid').innerHTML = all.map(p => {
     const sinStock = p.stock === 0;
     const lowStock = p.stock === 1;
     let badgeHtml = '';
     if (sinStock) badgeHtml = `<span class="stock-badge out">Sin stock</span>`;
     else if (lowStock) badgeHtml = `<span class="stock-badge low">Último!</span>`;
-
     return `
     <div class="product-card${sinStock ? ' no-stock' : ''}">
       <div class="card-img">
-        <img src="${p.img}" alt="${p.name}" loading="lazy" onclick="openLightbox('${p.img}', '${p.name}')" style="cursor:zoom-in" />
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onclick="openLightbox(this)" />
         ${badgeHtml}
       </div>
       <div class="card-body">
@@ -723,15 +550,37 @@ function renderProducts() {
                <span class="qty-val" id="qty-${p.id}">1</span>
                <button class="qty-btn" onclick="changeQty('${p.id}',1)">+</button>
              </div>
-             <button class="add-btn" id="btn-${p.id}" onclick="addToCart('${p.id}')">
-               Agregar
-             </button>`
+             <button class="add-btn" id="btn-${p.id}" onclick="addToCart('${p.id}')">Agregar</button>`
         }
       </div>
     </div>`;
   }).join('');
 }
 
+// ── LIGHTBOX ──
+function openLightbox(imgEl) {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  lbImg.src = imgEl.src;
+  lbImg.alt = imgEl.alt;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// ── CARRITO ──
 function changeQty(id, delta) {
   qty[id] = Math.max(1, qty[id] + delta);
   document.getElementById('qty-' + id).textContent = qty[id];
@@ -755,7 +604,6 @@ function addToCart(id) {
 }
 
 function removeFromCart(id) { cart[id] = 0; updateCartUI(); }
-
 function cartTotal() { return PRODUCTS.reduce((s, p) => s + p.price * cart[p.id], 0); }
 function cartCount() { return PRODUCTS.reduce((s, p) => s + cart[p.id], 0); }
 function cartItems() { return PRODUCTS.filter(p => cart[p.id] > 0); }
@@ -767,7 +615,6 @@ function updateCartUI() {
   const totalRow = document.getElementById('cart-total-row');
   const form     = document.getElementById('customer-form');
   const items    = cartItems();
-
   if (!items.length) {
     list.innerHTML = '<p class="cart-empty">Todavía no agregaste productos.</p>';
     totalRow.style.display = 'none';
@@ -783,8 +630,7 @@ function updateCartUI() {
         <button class="remove-item" onclick="removeFromCart('${p.id}')" title="Quitar">✕</button>
       </div>`).join('');
     totalRow.style.display = 'flex';
-    document.getElementById('cart-total-amount').textContent =
-      '$' + cartTotal().toLocaleString('es-AR');
+    document.getElementById('cart-total-amount').textContent = '$' + cartTotal().toLocaleString('es-AR');
     form.style.display = 'block';
   }
 }
@@ -853,22 +699,7 @@ function pedirWA() {
   const msg = `Hola MOTO 7! Quiero hacer un pedido:\n\n${lines}\n\n*Total: $${cartTotal().toLocaleString('es-AR')}*\n\n👤 *Mis datos:*\nNombre: ${data.nombre}\nDNI: ${data.dni}\nTel: ${data.tel}\nEmail: ${data.mail}`;
   window.open('https://wa.me/' + CONFIG.WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }
-function openLightbox(src, alt, event) {
-  if (event) event.stopPropagation();
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox-img').alt = alt;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
 
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeLightbox();
-});
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
