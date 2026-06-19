@@ -853,7 +853,8 @@ function pedirWA() {
   const msg = `Hola MOTO 7! Quiero hacer un pedido:\n\n${lines}\n\n*Total: $${cartTotal().toLocaleString('es-AR')}*\n\n👤 *Mis datos:*\nNombre: ${data.nombre}\nDNI: ${data.dni}\nTel: ${data.tel}\nEmail: ${data.mail}`;
   window.open('https://wa.me/' + CONFIG.WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }
-function openLightbox(src, alt) {
+function openLightbox(src, alt, event) {
+  if (event) event.stopPropagation();
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox-img').alt = alt;
   document.getElementById('lightbox').classList.add('open');
