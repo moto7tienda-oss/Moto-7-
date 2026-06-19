@@ -590,9 +590,9 @@
 <div class="products-grid" id="products-grid"></div>
 
 <!-- Lightbox -->
-<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">✕</button>
+  <img id="lightbox-img" src="" alt="" />
 </div>
 
 <footer>
@@ -855,10 +855,20 @@ function pedirWA() {
 }
 function openLightbox(src, alt, event) {
   if (event) event.stopPropagation();
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox-img').alt = alt;
-  document.getElementById('lightbox').classList.add('open');
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt;
+  lb.classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.getElementById('lightbox-close').onclick = closeLightbox;
+  lb.onclick = function(e) { if (e.target === lb) closeLightbox(); };
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}';
 }
 
 function closeLightbox() {
