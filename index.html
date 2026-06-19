@@ -582,11 +582,8 @@ document.addEventListener('keydown', function(e) {
 
 // ── CARRITO ──
 function changeQty(id, delta) {
-  const p = PRODUCTS.find(x => x.id === id);
-  const disponible = p.stock - cart[id];
-  qty[id] = Math.min(Math.max(1, qty[id] + delta), disponible);
+  qty[id] = Math.max(1, qty[id] + delta);
   document.getElementById('qty-' + id).textContent = qty[id];
-}
 }
 
 function addToCart(id) {
