@@ -514,6 +514,46 @@
     .aviso-legal strong { color: #ffcc66; }
 
     @media (max-width: 600px) {
+  /* ── LIGHTBOX ── */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  backdrop-filter: blur(4px);
+}
+.lightbox-overlay.open {
+  display: flex;
+}
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(232,0,15,0.3);
+  animation: zoomIn 0.2s ease;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.lightbox-close {
+  position: fixed;
+  top: 20px; right: 24px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.lightbox-close:hover { opacity: 1; color: var(--red); }    
   </style>
 </head>
 <body>
@@ -548,6 +588,12 @@
 </div>
 
 <div class="products-grid" id="products-grid"></div>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+</div>
 
 <footer>
   <div class="footer-logo">MOTO<span>7</span></div>
@@ -663,7 +709,7 @@ function renderProducts() {
     return `
     <div class="product-card${sinStock ? ' no-stock' : ''}">
       <div class="card-img">
-        <img src="${p.img}" alt="${p.name}" loading="lazy" />
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onclick="openLightbox('${p.img}', '${p.name}')" style="cursor:zoom-in" />
         ${badgeHtml}
       </div>
       <div class="card-body">
@@ -807,7 +853,21 @@ function pedirWA() {
   const msg = `Hola MOTO 7! Quiero hacer un pedido:\n\n${lines}\n\n*Total: $${cartTotal().toLocaleString('es-AR')}*\n\n👤 *Mis datos:*\nNombre: ${data.nombre}\nDNI: ${data.dni}\nTel: ${data.tel}\nEmail: ${data.mail}`;
   window.open('https://wa.me/' + CONFIG.WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }
+function openLightbox(src, alt) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
