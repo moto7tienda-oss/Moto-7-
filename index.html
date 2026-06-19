@@ -498,6 +498,22 @@
       .strip { gap: 1rem; font-size: 11px; }
       .section-header { padding: 1.5rem 1rem 0.75rem; }
     }
+    .aviso-legal {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #1a1200;
+      border-top: 1px solid #5a3e00;
+      border-bottom: 1px solid #5a3e00;
+      padding: 12px 1.5rem;
+      font-size: 12px;
+      color: #ccaa55;
+      line-height: 1.5;
+    }
+    .aviso-legal span { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .aviso-legal strong { color: #ffcc66; }
+
+    @media (max-width: 600px) {
   </style>
 </head>
 <body>
@@ -517,9 +533,13 @@
 </div>
 
 <div class="strip">
-  <span class="strip-item">🔒 Seguridad garantizada</span>
   <span class="strip-item">💳 Pagá con MercadoPago</span>
-  <span class="strip-item">📦 Envíos a todo el país</span>
+  <span class="strip-item">📦 Envío a cargo del comprador</span>
+</div>
+
+<div class="aviso-legal">
+  <span>⚠️</span>
+  <p><strong>Aviso importante:</strong> Estos productos están diseñados como medida de seguridad complementaria. Para mayor protección, asegure la cadena/candado en un punto fijo, sólido y estructural. El vendedor no será responsable por robos, pérdidas o daños derivados del uso incorrecto, negligencia o vulneración del producto. <strong>Los precios no incluyen envío.</strong> El comprador se hará cargo de los costos de envío.</p>
 </div>
 
 <div class="section-header">
